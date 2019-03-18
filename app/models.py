@@ -11,6 +11,17 @@ class UserProfile(db.Model):
     biography = db.Column(db.String(255))
     upload = db.Column(db.String(150))
     profile_creation =db.Column(db.String(255))
+    
+    def __init__(self, first_name, last_name,gender,email,location,biography,upload):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.gender = gender
+        self.email=email
+        self.location=location
+        self.biography=biography
+        self.upload=upload
+       
+       
 
     def is_authenticated(self):
         return True
