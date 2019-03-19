@@ -1,15 +1,9 @@
-# ----------------------
-# Flask
-# ----------------------
 flask
 Flask-WTF
 Flask-SQLAlchemy
 Flask-Migrate
-Flask-Script
 Flask-Login
+Flask-Uploads
 psycopg2
-
-# ----------------------
-# Production Server
-# ----------------------
 gunicorn
+Werkzeug

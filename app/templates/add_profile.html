@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+
+{% block main %} 
+<h1 class="page-header">Create Profile</h1>
+<br>
+
+<form method="POST" action="{{ url_for('add_profile') }}" enctype="multipart/form-data">
+    
+    {{ form.csrf_token }}
+    
+    <div class="form">
+        <label for="First Name">{{ form.firstname.label }}<b style="color:red"> (Required)</b></label>
+        {{ form.firstname(size=35) }}
+    </div>
+    <div class="form">
+        <label for="Last Name">{{ form.lastname.label }}<b style="color:red"> (Required)</b></label>
+        {{ form.lastname(size=35) }}
+    </div>
+     <div class="form">
+        <label for="Username">{{ form.username.label }}<b style="color:red"> (Required)</b></label>
+        {{ form.username }}
+    </div>
+    <div class="form">
+        <label for="Age">{{ form.age.label }}<b style="color:red"> (Required)</b></label>
+        {{ form.age }}
+    </div>
+    <div class="form">
+        <label for="Gender">{{ form.gender.label }}<b style="color:red"> (Required)</b></label>
+        {{ form.gender }}
+    </div>
+    <div class="form">
+        <label for="Biography">{{ form.biography.label }}<b style="color:red"> (Required)</b></label>
+        {{ form.biography(cols="55", rows="5") }}
+    </div>
+    <div class="form">
+        <label for="Profile Picture">{{ form.image.label }}<b style="color:blue"> (Optional)</b></label>
+        {{ form.image }}
+    </div>
+    
+    <button class="btn btn-primary active" type="submit">Submit</button>
+</form>
+{% endblock %}
